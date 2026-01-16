@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学信档案</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="login-container">
+            <div class="logo">
+                <img src="./images/logo.png" alt="学信档案">
+            </div>
+            <p class="login-tip">请使用 <span>学信网账号</span> 进行登录</p>
+            <form class="login-form">
+                <div class="form-group">
+                    <input type="text" placeholder="手机号/邮箱" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="密码" class="form-control">
+                </div>
+                <button type="button" class="btn-login">登录</button>
+                <div class="form-links">
+                    <a href="#" class="link-left">找回密码</a>
+                    <a href="#" class="link-right">注册</a>
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#">首页</a>
+                <a href="#">帮助中心</a>
+                <a href="#">联系我们</a>
+            </div>
+            <div class="copyright">
+                Copyright © 2003-2026 学信网 All Rights Reserved
+            </div>
+        </div>
+
+    </div>
+    <script>
+        document.querySelector('.btn-login').addEventListener('click', function() {
+            const username = document.querySelectorAll('.form-control')[0].value;
+            const password = document.querySelectorAll('.form-control')[1].value;
+            
+            const errorMsg = document.querySelector('.error-msg');
+            if (errorMsg) errorMsg.remove();
+            
+            if (username === '17870326602' && password === 'HSRhsr2004') {
+                window.location.href = 'index.html';
+            } else {
+                const error = document.createElement('div');
+                error.className = 'error-msg';
+                error.textContent = '您输入的用户名或密码有误';
+                document.querySelectorAll('.form-group')[1].appendChild(error);
+            }
+        });
+    </script>
+</body>
+</html>
