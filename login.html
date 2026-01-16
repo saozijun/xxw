@@ -48,6 +48,7 @@
             if (errorMsg) errorMsg.remove();
             
             if (username === '17870326602' && password === 'HSRhsr2004') {
+                localStorage.setItem('auth', 'true');
                 window.location.href = 'index.html';
             } else {
                 const error = document.createElement('div');
